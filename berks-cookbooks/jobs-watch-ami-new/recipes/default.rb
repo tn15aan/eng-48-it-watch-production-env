@@ -60,6 +60,7 @@ end
 #   command "pip3 install -r /home/ubuntu/code/requirements.txt"
 #   cwd '/home/ubuntu'
 # end
+
 # directory '/vagrant/' do
 #   action :create
 #   mode '0777'
@@ -74,15 +75,15 @@ end
 #   action :create
 #   mode '0777'
 # end
-#
-# # remote_directory '/home/vagrant/app' do
-# #   source 'app'
-# #   owner 'root'
-# #   group 'root'
-# # end
-#
-# #Ensures pytest has write permission to path of Downloads folder
-# directory '/' do
-#   action :create
-#   mode '0777'
+
+# remote_directory '/home/vagrant/app' do
+#   source 'app'
+#   owner 'root'
+#   group 'root'
 # end
+
+#Ensures pytest has write permission to path of Downloads folder
+directory '/' do
+  action :create
+  mode '0777'
+end
